@@ -1,6 +1,7 @@
 "use client"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import Button from "@/components/Common/Button/Button";
 
 export default function Hero() {
   const router = useRouter();
@@ -15,8 +16,8 @@ export default function Hero() {
           reales y oportunidades para todos</p>
 
         <div className="flex flex-row gap-4">
-          <button onClick={() => router.push('/join-team')} className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors text-xl">Súmate al equipo D</button>
-          <button onClick={() => router.push('/presentation')} className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors text-xl">Conoce a Daniel</button>
+          <Button onClick={() => router.push('/join-team')} className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors text-xl">Súmate al equipo D</Button>
+          <Button onClick={() => router.push('/presentation')} className="bg-blue-500 text-white px-6 py-3 rounded-lg hover:bg-blue-600 transition-colors text-xl">Conoce a Daniel</Button>
         </div>
       </div>
       
