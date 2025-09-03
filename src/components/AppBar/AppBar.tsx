@@ -31,9 +31,9 @@ export default function AppBar() {
   return (
     <Disclosure
       as="nav"
-      className="relative bg-gray-800/50 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-white/10 w-full"
+      className="relative bg-white after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-px after:bg-gray-300 w-full"
     >
-      <div className="mx-auto  px-2 sm:px-2 lg:px-4 pt-8">
+      <div className="mx-auto  px-2 sm:px-2 p-2">
         <div className="relative flex h-16 items-center justify-between w-full">
           <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
             {/* Mobile menu button*/}
@@ -44,9 +44,9 @@ export default function AppBar() {
               <XMarkIcon aria-hidden="true" className="hidden size-6 group-data-open:block" />
             </DisclosureButton>
           </div>
-          <div className="flex flex-1 items-center justify-between sm:items-stretch sm:justify-start w-full">
-            <div className="hidden sm:ml-6 sm:block">
-              <div className="flex">
+          <div className="flex flex-1 items-center justify-evenly sm:items-stretch w-full">
+            <div className="hidden sm:ml-0 sm:block">
+              <div className="flex space-x-8">
                 
                 {navigation.map((item) => {
                   const active = isActive(item.href)
@@ -56,8 +56,8 @@ export default function AppBar() {
                       href={item.href}
                       aria-current={active ? 'page' : undefined}
                       className={classNames(
-                        active ? 'bg-blue-500 text-white' : 'text-gray-300 hover:bg-white/5 hover:text-white',
-                        'rounded-md px-7 py-2 text-sm font-medium',
+                        active ? 'bg-blue-500 text-white' : 'text-gray-800 hover:bg-white/5 hover:text-gray-600',
+                        'rounded-lg px-7 py-2 text-base font-medium',
                       )}
                     >
                       {item.name}
