@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-
+import { useState, useEffect } from "react";
 // Iconos SVG personalizados
 const GraduationCapIcon = () => (
   <svg viewBox="0 0 64 64" fill="currentColor" className="w-16 h-16 sm:w-20 sm:h-20">
