@@ -19,8 +19,7 @@ function classNames(...classes: string[]) {
 
 export default function AppBar() {
   const pathname = usePathname()
-  const isHomePage = pathname === '/'
-
+  //const isHomePage = pathname === '/'
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/'
     return pathname === href || pathname.startsWith(href + '/')

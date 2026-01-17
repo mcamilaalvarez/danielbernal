@@ -1,4 +1,4 @@
-export default function Input({ label, type, id, name, value, onChange, required, placeholder, className = "" }
+export default function Input({  type, id, name, value, onChange, required, placeholder,  }
     : { label: string, type: string, id: string, name: string, value: string, onChange: (e: React.ChangeEvent<HTMLInputElement>) => 
         void, required: boolean, placeholder: string, className?: string }) {
     return (

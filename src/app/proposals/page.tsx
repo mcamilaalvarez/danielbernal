@@ -86,7 +86,7 @@ interface Propuesta {
 }
 
 export default function ProposalsPage() {
-  const [proposals, setProposals] = useState<Propuesta[]>([]);
+  /* const [proposals, setProposals] = useState<Propuesta[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -105,14 +105,14 @@ export default function ProposalsPage() {
       }
     };
     fetchProposals();
-  }, []);
+  }, []); */
 
   // Función para obtener el icono correspondiente
-  const getIcon = (iconName: string) => {
+ /*  const getIcon = (iconName: string) => {
     const IconComponent = iconMap[iconName?.toLowerCase()] || iconMap.default;
     return <IconComponent />;
   };
-
+ */
   if (loading) {
     return (
       <div className="relative min-h-screen flex flex-col font-helvetica">
