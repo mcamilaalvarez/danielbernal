@@ -1,73 +1,69 @@
 "use client"
+
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import Button from "@/components/Common/Button/Button";
-import ImageTextCard from "@/components/Common/ImageTextCard/ImageTextCard";
-import ContainerImgTxtCard from "@/components/Common/ImageTextCard/ContainerImgTxtCard";
-const achievementsData = [
-    {
-        id: 1,
-        image: "/images/achievements.jpg",
-        title: "Educación: ",
-        description: "Primera universidad regional de Cundinamarca"
-    },
-    {
-        id: 2,
-        image: "/images/achievements.jpg",
-        title: "Movilidad:",
-        description: "La Vía Perimetral, conectando a un millón de personas."
-    },
-    {
-        id: 3,
-        image: "/images/achievements.jpg",
-        title: "Inclusión:",
-        description: "2.000 adultos mayores y personas con discapacidad conocieron el mar."
-    },
-    {
-        id: 4,
-        image: "/images/achievements.jpg",
-        title: "Deporte y desarrollo:",
-        description: "Centro de innovación y nuevos espacios para la juventud."
-    }
-];
 
 export default function Achievements() {
-    const router = useRouter();
-    return (
-        <section className="flex flex-col  bg-white py-8 w-full px-9">
-            <div className="flex flex-col gap-6">
-                <h2 className="text-4xl font-bold text-gray-800">Por Cundinamarca: hechos</h2>
+  const router = useRouter();
 
-                <p className="text-2xl text-gray-600 ">Mi experiencia en el servicio público se mide en resultados que mejoran vidas. Estos son algunos
-                    de los logros que marcan la diferencia: </p>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 mt-8 ">
-                <ContainerImgTxtCard>
-                    <Image src="/images/achievements2.jpg" alt="Daniel Bernal Montealegre" width={600} height={800} className="rounded-xl mx-auto md:mx-0" />
-                    <h3 className="text-2xl font-bold text-gray-800 mt-4 w-3/4 mx-auto md:mx-0"> {achievementsData[0].title} </h3>
-                    <p className="text-xl text-gray-600 mt-2 mx-auto md:mx-0"> {achievementsData[0].description} </p>
-                <Button onClick={() => router.push('/achievements')} className="mx-auto md:mx-0">Conoce más hechos</Button>
-                </ContainerImgTxtCard>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 justify-items-center">
-                    <ContainerImgTxtCard>
-                        <ImageTextCard image="/images/achievements.jpg" title={achievementsData[1].title} description={achievementsData[1].description}
-                         width={250} height={350} alt="Daniel Bernal Montealegre" />
-                    </ContainerImgTxtCard>
-                    <ContainerImgTxtCard>
-                        <ImageTextCard image="/images/achievements.jpg" title={achievementsData[2].title} description={achievementsData[2].description}
-                         width={250} height={300} alt="Daniel Bernal Montealegre" />
-                    </ContainerImgTxtCard>
-                    <ContainerImgTxtCard>
-                        <ImageTextCard image="/images/achievements.jpg" title={achievementsData[3].title} description={achievementsData[3].description}
-                         width={250} height={350} alt="Daniel Bernal Montealegre" />
-                    </ContainerImgTxtCard>
-                    <ContainerImgTxtCard>
-                        <ImageTextCard image="/images/achievements2.jpg" title={achievementsData[1].title} description={achievementsData[1].description}
-                         width={250} height={300} alt="Daniel Bernal Montealegre" />
-                    </ContainerImgTxtCard>
-                </div>
+  return (
+    <div className="relative w-full overflow-hidden">
+      {/* Contenedor que permite que la imagen sobresalga por arriba */}
+      <section className="relative w-full bg-[#f2a515] font-helvetica leading-[0.9] mt-24">
+        <div className="relative z-10 max-w-6xl mx-auto md:px-10  lg:py-10 flex flex-col lg:flex-row gap-10 lg:gap-14 items-start ">
+          {/* Texto */}
+          <div className="flex flex flex-col gap-4 text-[#0f3c76]  w-[50%]">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-light leading-[0.9]">
+              Por Cundinamarca: <span className=" font-bold text-[#0a3361]">hechos</span>
+            </h2>
+            <p className="text-base md:text-lg text-[#0f3c76] leading-[0.9]">
+              Mi experiencia en el servicio público se mide en resultados que
+              mejoran vidas. Estos son algunos
+            </p>
+
+            <div className="flex flex-col gap-2 text-base md:text-lg  text-[#0f3c76]">
+              <p className="leading-[0.9]">
+                <span className="font-bold leading-[0.9]">Educación:</span> primera universidad
+                regional de Cundinamarca.
+              </p>
+              <p className="leading-[0.9]">
+                <span className="font-bold leading-[0.9]">Movilidad:</span> la Vía Perimetral,
+                conectando a un millón de personas.
+              </p>
+              <p className="leading-[0.9]">
+                <span className="font-bold leading-[0.9]">Inclusión:</span> 2.000 adultos mayores
+                y personas con discapacidad conocieron el mar.
+              </p>
+              <p className="leading-[0.9]">
+                <span className="font-bold leading-[0.9]">Deporte y desarrollo:</span> centro de
+                innovación y nuevos espacios para la juventud.
+              </p>
             </div>
 
-        </section>
-    );
+            <div className="mt-4">
+              <button
+                onClick={() => router.push("/achievements")}
+                className="inline-flex items-center gap-1 bg-[#0d5c85] hover:bg-[#0b4f72] text-white px-6 md:px-7 lg:px-8 py-3 rounded-full text-base md:text-lg font-normal transition-colors duration-200 shadow-none"
+              >
+                <span className="font-bold">Conoce</span>
+                <span className="font-light">más hechos</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Imagen - Posición absoluta para que sobresalga por arriba */}
+          <div className="absolute right-0 lg:right-0 left-60 bottom-[-120px]  pointer-events-none flex items-end">
+            <Image
+              src="/images/DanielBernalHechos.png"
+              alt="Daniel Bernal"
+              width={1700}
+              height={1700}
+              priority
+              className="object-contain object-bottom"
+            />
+          </div>
+        </div>
+      </section>
+    </div>
+  );
 }

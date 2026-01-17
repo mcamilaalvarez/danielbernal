@@ -8,8 +8,10 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-family-helvetica: var(--font-helvetica);
+  --font-family-helvetica-compressed: var(--font-helvetica-compressed);
+  --font-family-inter: var(--font-inter);
+  --font-family-archivo: var(--font-archivo);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -22,5 +24,21 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Fuentes personalizadas para Tailwind */
+.font-helvetica {
+  font-family: var(--font-helvetica), sans-serif;
+}
+
+.font-helcompressed {
+  font-family: var(--font-helvetica-compressed), sans-serif;
+}
+
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
+}
+
+.font-archivo {
+  font-family: var(--font-archivo), sans-serif;
 }

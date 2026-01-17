@@ -1,27 +1,43 @@
 import type { Metadata } from "next";
-import { Open_Sans } from "next/font/google"; 
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import AppBar from "@/components/AppBar/AppBar";
+import Footer from "@/components/Common/Footer/Footer";
+import localFont from "next/font/local";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const helvetica = localFont({
+  src: [
+    {
+      path: "./fonts/HelveticaNeueLight.otf",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "./fonts/HelveticaNeueRoman.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/HelveticaNeueBold.otf",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "./fonts/HelveticaNeueBlack.otf", // Esta es la "gorda" para el TODO
+      weight: "900",
+      style: "normal",
+    },
+   
+  ],
+  variable: "--font-helvetica",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const helcompressed= localFont({
+  src: [{ path: "./fonts/HelveticaInseratLTPro.otf", weight: "900" , style: "normal"}],
+  variable: "--font-helvetica-compressed",
 });
-const openSans = Open_Sans({
-  subsets: ["latin"],
-  display: 'swap', 
-  variable: '--font-open-sans'
-})
 
 export const metadata: Metadata = {
   title: "Daniel Bernal",
-  description: "Una página web de Daniel Bernal",
+  description: "Candidad a la camara Daniel Bernal",
 };
 
 export default function RootLayout({
@@ -32,10 +48,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${openSans.variable} ${geistMono.variable} antialiased`}
+        className={` ${helvetica.variable} ${helcompressed.variable} antialiased`}
       >
         <AppBar/>
         {children}
+        <Footer />
       </body>
     </html>
   );
