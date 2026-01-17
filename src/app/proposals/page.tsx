@@ -86,7 +86,7 @@ interface Propuesta {
 }
 
 export default function ProposalsPage() {
-  /* const [proposals, setProposals] = useState<Propuesta[]>([]);
+  const [proposals, setProposals] = useState<Propuesta[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -98,6 +98,7 @@ export default function ProposalsPage() {
         }
         const data: Propuesta[] = await response.json();
         setProposals(data);
+        console.log(proposals);
       } catch (error) {
         console.error("Error fetching proposals:", error);
       } finally {
@@ -105,7 +106,7 @@ export default function ProposalsPage() {
       }
     };
     fetchProposals();
-  }, []); */
+  }, []);
 
   // Función para obtener el icono correspondiente
  /*  const getIcon = (iconName: string) => {
