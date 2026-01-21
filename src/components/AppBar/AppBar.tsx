@@ -19,7 +19,7 @@ function classNames(...classes: string[]) {
 
 export default function AppBar() {
   const pathname = usePathname()
-  //const isHomePage = pathname === '/'
+  const isHomePage = pathname === '/'
   const isActive = (href: string) => {
     if (href === '/') return pathname === '/'
     return pathname === href || pathname.startsWith(href + '/')
@@ -44,11 +44,13 @@ export default function AppBar() {
           </div>
           
           {/* Logo VotaALaCamara - Centro */}
+          {isHomePage && (
           <div className="hidden sm:flex items-center">
             <Link href="/" className="w-[300px]">
               <VotaALaCamara />
             </Link>
           </div>
+          )}
 
           {/* Navegación - Derecha del logo */}
           <div className="hidden sm:flex items-center ml-8">
