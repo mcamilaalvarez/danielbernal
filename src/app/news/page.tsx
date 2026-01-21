@@ -93,7 +93,7 @@ export default function NewsPage() {
               <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-4">
                 {noticiaDestacada.descripcion}
               </p>
-              <p className="text-gray-500 text-sm leading-relaxed">
+              <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">
                 {noticiaDestacada.texto}
               </p>
             </div>
@@ -125,7 +125,7 @@ export default function NewsPage() {
                   <h3 className="text-[#114380] text-lg font-bold mt-2 mb-2">
                     {noticia.titulo}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
                     {noticia.texto}
                   </p>
                 </div>
