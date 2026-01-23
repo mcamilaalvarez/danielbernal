@@ -93,7 +93,7 @@ export default function NewsPage() {
               <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-4">
                 {noticiaDestacada.descripcion}
               </p>
-              <p className="text-gray-500 text-sm leading-relaxed whitespace-pre-line">
+              <p className="text-gray-500 text-base leading-relaxed whitespace-pre-line">
                 {noticiaDestacada.texto}
               </p>
             </div>
@@ -102,14 +102,14 @@ export default function NewsPage() {
 
         {/* Grid de otras noticias */}
         {otrasNoticias.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
             {otrasNoticias.map((noticia, index) => (
               <article
                 key={index}
                 className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 {/* Imagen */}
-                <div className="relative h-48">
+                <div className="relative h-150">
                   <Image
                     src={noticia.urlImagen || "/images/proyect.jpg"}
                     alt={noticia.altImagen || noticia.titulo}
@@ -125,7 +125,10 @@ export default function NewsPage() {
                   <h3 className="text-[#114380] text-lg font-bold mt-2 mb-2">
                     {noticia.titulo}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-line">
+                  <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-4">
+                    {noticia.descripcion}
+                  </p>
+                  <p className="text-gray-600 text-base leading-snug whitespace-pre-line ">
                     {noticia.texto}
                   </p>
                 </div>

@@ -58,7 +58,7 @@ const teamMembers = [
 
 export default function JoinTeamPage() {
   return (
-    <section className="py-16 px-4 mt-24">
+    <section className="py-16 px-4 pt-32 bg-[#114380] min-h-screen">
     <div className="container mx-auto max-w-6xl">
       {/* Header */}
       <div className="text-center mb-16">
