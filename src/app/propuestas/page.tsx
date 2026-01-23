@@ -146,7 +146,7 @@ export default function ProposalsPage() {
       </div>
 
       {/* Sección principal */}
-      <section className="relative z-10  flex-1 lg:pt-[200px] sm:pt-40 pb-16 px-4 sm:px-8">
+      <section className="relative z-10 flex-1 pt-24 sm:pt-40 lg:pt-[200px] pb-16 px-4 sm:px-8">
         {/* Título */}
         <div className="text-center mb-12">
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4 drop-shadow-lg">

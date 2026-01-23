@@ -2,22 +2,22 @@
 import Image from "next/image";
 import { VotaALaCamara } from "@/components/Common/Icons/VotaALaCamara";
 
-// Imágenes de la galería (puedes reemplazar con las imágenes reales)
+// Imágenes de la galería
 const galleryImages = [
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
-    "/images/proyect.jpg",
+    "/images/GalleryImages/2.jpg",
+    "/images/GalleryImages/5.jpg",
+    "/images/GalleryImages/6.jpg",
+    "/images/GalleryImages/7.jpg",
+    "/images/GalleryImages/8.jpg",
+    "/images/GalleryImages/9.jpg",
+    "/images/GalleryImages/10.jpg",
+    "/images/GalleryImages/11.jpg",
+    "/images/GalleryImages/12.png",
+    "/images/GalleryImages/13.jpg",
+    "/images/GalleryImages/14.jpg",
+    "/images/GalleryImages/15.jpg",
+    "/images/GalleryImages/16.jpg",
+    "/images/GalleryImages/17.jpg",
 ];
 
 export default function Contact() {
@@ -48,7 +48,7 @@ export default function Contact() {
                 </div>
 
                 {/* Galería de imágenes */}
-                <div className="grid grid-cols-7 gap-1 max-w-5xl mx-auto mb-10">
+                <div className="grid grid-cols-7 gap-0 max-w-5xl mx-auto mb-10">
                     {galleryImages.map((img, index) => (
                         <div 
                             key={index} 

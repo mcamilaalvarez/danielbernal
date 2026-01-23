@@ -25,10 +25,7 @@ export default function News() {
                 const data: Noticia[] = await response.json();
                 
                 if (data && data.length > 0) {
-                    console.log("data", data);
-                    // Primera noticia como principal
                     setMainNews(data[0]);
-                    // Siguientes 3 noticias como secundarias
                     setSideNews(data.slice(1, 4));
                 }
             } catch (error) {
@@ -45,7 +42,7 @@ export default function News() {
         <section className="flex flex-col items-center bg-white py-12 px-4 w-full">
             {/* Título */}
             <div className="flex flex-col  items-center text-center mb-10 ">
-                <span className="lg:text-[70px] md:text-6xl font-bold text-[#0381c4]  font-helvetica tracking-[-0.06em] font-bold ">
+                <span className="lg:text-[70px] md:text-6xl font-bold text-[#0381c4]  font-helvetica tracking-[-0.06em] font-bold text-[30px]">
                     Noticias destacadas
                 </span>
                 <p className="text-lg lg:text-[25px] md:text-xl text-gray-600 font-helvetica leading-[0.9] font-light" >
@@ -73,7 +70,7 @@ export default function News() {
                             <div className="absolute inset-0 bg-gradient-to-t from-[#027fc1] via-[#027fc1]/20 to-transparent"></div>
 
                             {/* Contenido */}
-                            <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center">
+                            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center">
                                 <span className="inline-block bg-white text-[#0d5c85] text-sm font-bold font-helvetica px-4 py-1 mb-4">
                                     {mainNews.fecha}
                                 </span>
@@ -115,8 +112,10 @@ export default function News() {
                         {/* Botón abajo a la derecha */}
                         <div className="flex justify-end mt-auto">
                             <button
-                                onClick={() => router.push('/news')}
-                                className="bg-[#114380] text-white px-8 py-1 rounded-full hover:bg-[#0b4f72] transition-colors text-[22px] font-semibold"
+                                onClick={() => router.push('/noticias')}
+                                className="bg-[#114380] text-white px-8 py-1 
+                                rounded-full hover:bg-[#1a5a9a] hover:shadow-lg active:scale-95 active:bg-[#0d3660] transition-all
+                                 duration-200 transform cursor-pointer text-[22px] font-semibold sm:mt-8 mt-8 lg:mt-0"
                             >
                                 Ver más noticias
                             </button>

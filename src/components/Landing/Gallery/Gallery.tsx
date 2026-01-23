@@ -1,5 +1,6 @@
 "use client"
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const visionImages = [
     {
@@ -29,6 +30,8 @@ const visionImages = [
 ];
 
 export default function Gallery() {
+    const router = useRouter();
+    
     return (
         <section className="flex flex-col items-center bg-white py-16 px-4 md:px-8 lg:px-16 w-full">
             <div className="max-w-7xl w-full ">
@@ -45,61 +48,73 @@ export default function Gallery() {
                     </div>
 
                     {/* Right Section - Image Grid con proporciones ajustadas */}
-                    <div className="grid grid-cols-5 gap-4 lg:col-span-3">
+                    <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 lg:col-span-3">
                         {/* Imagen 1 - Arriba izquierda (un poco más ancha) */}
-                        <div className="relative rounded-xl overflow-hidden aspect-[4/3] col-span-2">
+                        <div 
+                            onClick={() => router.push('/propuestas')}
+                            className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] col-span-1 sm:col-span-2 cursor-pointer group"
+                        >
                             <Image
                                 src={visionImages[0].src}
                                 alt={visionImages[0].alt}
                                 fill
-                                className="object-cover"
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
-                                <h3 className="text-white text-sm md:text-[20px] lg:text-[20px] font-light text-center font-helvetica leading-[0.8]">
-                                    Acceso a <br></br><span className="font-bold text-[26px]">{visionImages[0].title}</span> descentralizada
+                                <h3 className="text-white text-[18px] sm:text-[20px] lg:text-[20px] font-light text-center font-helvetica leading-[0.8] group-hover:text-[#f7ab13] transition-colors duration-300">
+                                    Acceso a <br></br><span className="font-bold text-[22px] sm:text-[26px]">{visionImages[0].title}</span> descentralizada
                                 </h3>
                             </div>
                         </div>
 
-                        <div className="relative rounded-xl overflow-hidden col-span-3">
+                        <div 
+                            onClick={() => router.push('/propuestas')}
+                            className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-auto col-span-1 sm:col-span-3 cursor-pointer group"
+                        >
                             <Image
                                 src={visionImages[1].src}
                                 alt={visionImages[1].alt}
                                 fill
-                                className="object-cover"
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
-                                <h3 className="text-white  md:text-[24px] lg:text-[26px] font-bold text-center leading-[0.8]">
+                                <h3 className="text-white text-[20px] sm:text-[24px] lg:text-[26px] font-bold text-center leading-[0.8] group-hover:text-[#f7ab13] transition-colors duration-300">
                                     {visionImages[1].title}
                                 </h3>
                             </div>
                         </div>
 
-                        <div className="relative rounded-xl overflow-hidden col-span-3">
+                        <div 
+                            onClick={() => router.push('/propuestas')}
+                            className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-auto col-span-1 sm:col-span-3 cursor-pointer group"
+                        >
                             <Image
                                 src={visionImages[2].src}
                                 alt={visionImages[2].alt}
                                 fill
-                                className="object-cover"
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
-                                <h3 className="text-white text-sm md:text-base lg:text-[20px] font-light text-center leading-[0.8]">
-                                   <span className="font-bold text-[26px]"> {visionImages[2].title}</span> <br></br> y sostenible
+                                <h3 className="text-white text-[18px] sm:text-base lg:text-[20px] font-light text-center leading-[0.8] group-hover:text-[#f7ab13] transition-colors duration-300">
+                                   <span className="font-bold text-[22px] sm:text-[26px]"> {visionImages[2].title}</span> <br></br> y sostenible
                                 </h3>
                             </div>
                         </div>
 
                         {/* Imagen 4 - Abajo derecha (un poco más ancha) */}
-                        <div className="relative rounded-xl overflow-hidden aspect-square col-span-2">
+                        <div 
+                            onClick={() => router.push('/propuestas')}
+                            className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-square col-span-1 sm:col-span-2 cursor-pointer group"
+                        >
                             <Image
                                 src={visionImages[3].src}
                                 alt={visionImages[3].alt}
                                 fill
-                                className="object-cover"
+                                className="object-cover transition-transform duration-300 group-hover:scale-105"
                             />
                             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/50 to-transparent p-4">
-                                <h3 className="text-white text-sm md:text-base lg:text-[20px] font-light text-center leading-[1]">
-                                Inclusión social <br></br><span className="font-bold text-[26px]"> {visionImages[3].title}</span>
+                                <h3 className="text-white text-[18px] sm:text-base lg:text-[20px] font-light text-center leading-[1] group-hover:text-[#f7ab13] transition-colors duration-300">
+                                Inclusión social <br></br><span className="font-bold text-[22px] sm:text-[26px]"> {visionImages[3].title}</span>
                                 </h3>
                             </div>
                         </div>
