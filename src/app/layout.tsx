@@ -37,7 +37,10 @@ const helcompressed= localFont({
 
 export const metadata: Metadata = {
   title: "Daniel Bernal",
-  description: "Candidad a la camara Daniel Bernal",
+  description: "Candidato a la cámara Daniel Bernal",
+  icons: {
+    icon: "/icon?v=2", // Next.js sirve src/app/icon.svg en /icon
+  },
 };
 
 export default function RootLayout({
