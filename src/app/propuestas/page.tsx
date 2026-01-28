@@ -42,33 +42,6 @@ const HandshakeIcon = () => (
     <path d="M24 32l8 8 8-8" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
-const proposalsGet = [
-  {
-    Icon: GraduationCapIcon,
-    title: "EDUCACIÓN SUPERIOR DESCENTRALIZADA",
-    description:
-      "Llevar la universidad a tus provincias para que ningún joven deba abandonar su municipio para estudiar.",
-  },
-  {
-    Icon: TractorIcon,
-    title: "CAMPO PRODUCTIVO Y COMPETITIVO",
-    description:
-      "Inversión en tecnología agrícola y vías terciarias para que el campesino sea verdadero dueño de progreso.",
-  },
-  {
-    Icon: TrainIcon,
-    title: "MOVILIDAD EFICIENTE Y SOSTENIBLE",
-    description:
-      "Integración regional con Regiotram y transporte digno que conecta a Cundinamarca con el país.",
-  },
-  {
-    Icon: HandshakeIcon,
-    title: "INCLUSIÓN CON DIGNIDAD",
-    description:
-      "Programas reales para adultos mayores y personas con discapacidad. Más que ayuda, es justicia social.",
-  },
-];
-
 // Mapeo de iconos por nombre
 const iconMap: { [key: string]: React.FC } = {
   educacion: GraduationCapIcon,
@@ -77,6 +50,11 @@ const iconMap: { [key: string]: React.FC } = {
   inclusion: HandshakeIcon,
   // Fallback por defecto
   default: GraduationCapIcon,
+};
+
+// Función para obtener el icono correspondiente
+const getIconComponent = (iconName: string): React.FC => {
+  return iconMap[iconName?.toLowerCase()] || iconMap.default;
 };
 
 interface Propuesta {
@@ -98,7 +76,6 @@ export default function ProposalsPage() {
         }
         const data: Propuesta[] = await response.json();
         setProposals(data);
-        console.log(proposals);
       } catch (error) {
         console.error("Error fetching proposals:", error);
       } finally {
@@ -108,12 +85,6 @@ export default function ProposalsPage() {
     fetchProposals();
   }, []);
 
-  // Función para obtener el icono correspondiente
- /*  const getIcon = (iconName: string) => {
-    const IconComponent = iconMap[iconName?.toLowerCase()] || iconMap.default;
-    return <IconComponent />;
-  };
- */
   if (loading) {
     return (
       <div className="relative min-h-screen flex flex-col font-helvetica">
@@ -161,27 +132,30 @@ export default function ProposalsPage() {
 
         {/* Grid de propuestas */}
         <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-          {proposalsGet.map((proposal, index) => (
-            <div
-              key={index}
-              className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 sm:p-10 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300"
-            >
-              {/* Icono */}
-              <div className="mb-6 text-[#0a4570]">
-                <proposal.Icon />
+          {proposals.map((proposal, index) => {
+            const IconComponent = getIconComponent(proposal.icono);
+            return (
+              <div
+                key={index}
+                className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 sm:p-10 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300"
+              >
+                {/* Icono */}
+                <div className="mb-6 text-[#0a4570]">
+                  <IconComponent />
+                </div>
+
+                {/* Título de la propuesta */}
+                <h3 className="text-[#0a4570] text-lg sm:text-xl font-bold tracking-wide mb-4">
+                  {proposal.titulo}
+                </h3>
+
+                {/* Descripción */}
+                <p className="text-[#4a6070] text-sm sm:text-base font-light leading-relaxed">
+                  {proposal.descripcion}
+                </p>
               </div>
-
-              {/* Título de la propuesta */}
-              <h3 className="text-[#0a4570] text-lg sm:text-xl font-bold tracking-wide mb-4">
-                {proposal.title}
-              </h3>
-
-              {/* Descripción */}
-              <p className="text-[#4a6070] text-sm sm:text-base font-light leading-relaxed">
-                {proposal.description}
-              </p>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </section>
     </div>
