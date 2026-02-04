@@ -1,13 +1,37 @@
 "use client"
 import Image from "next/image";
 import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
   const router = useRouter();
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Solo actualizar si estamos en la zona visible del hero (optimización)
+      if (window.scrollY < window.innerHeight * 1.5) {
+        setScrollY(window.scrollY);
+      }
+    };
+
+    // Añadir listener con passive para mejor rendimiento
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <section className="relative w-full min-h-screen flex flex-col">
-      {/* Background Image - Cubre toda la sección */}
-      <div className="absolute inset-0 z-0">
+    <section className="relative w-full min-h-screen flex flex-col overflow-hidden">
+      {/* Background Image - Parallax Effect */}
+      <div 
+        className="absolute inset-0 z-0 will-change-transform"
+        style={{
+          transform: `translateY(${scrollY * 0.6}px) scale(1.3)`, // Efecto más pronunciado
+        }}
+      >
         <Image
           src="/images/HeroBackground.png"
           alt="Paisaje de Cundinamarca"
@@ -17,8 +41,13 @@ export default function Hero() {
         />
       </div>
 
-      {/* Portrait Image - Se extiende desde la primera sección hasta detrás del cuadro blanco */}
-      <div className="absolute right-0 left-0 top-[360px] sm:top-[310px] md:top-[200px] md:left-auto w-full md:w-1/2 lg:w-2/5 z-5 md:z-10 flex items-start justify-center md:justify-center lg:justify-end pr-0 md:pr-8 lg:pr-16 pointer-events-none h-[350px] sm:h-[400px] md:h-auto md:bottom-0">
+      {/* Portrait Image - Parallax Effect - se mueve en dirección opuesta para más contraste */}
+      <div 
+        className="absolute right-0 left-0 top-[360px] sm:top-[310px] md:top-[200px] md:left-auto w-full md:w-1/2 lg:w-2/5 z-5 md:z-10 flex items-start justify-center md:justify-center lg:justify-end pr-0 md:pr-8 lg:pr-16 pointer-events-none h-[350px] sm:h-[400px] md:h-auto md:bottom-0 will-change-transform"
+        style={{
+          transform: `translateY(${scrollY * -0.1}px)`, // Movimiento opuesto para más contraste
+        }}
+      >
         <div className="relative w-[60%] sm:w-[50%] md:w-full max-w-2xl lg:max-w-4xl xl:max-w-5xl h-full flex items-center justify-center">
           <Image
             src="/images/HeroImgDB.png"
@@ -40,9 +69,9 @@ export default function Hero() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-12 items-center w-full py-8 md:py-16">
             {/* Left Side - Text Content */}
             <div className="flex flex-col gap-4 md:gap-8 text-white ">
-              <h2 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] tracking-[-0.06em] leading-[0.9] font-helcompressed text-center">
+              <h1 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] tracking-[-0.06em] leading-[0.9] font-helcompressed text-center">
                 POR CUNDINAMARCA
-              </h2>
+              </h1>
               <span className="text-[100px] sm:text-[130px] md:text-[150px] lg:text-[170px] text-[#f7ab13] tracking-[-0.06em] font-black leading-[0.9] font-helcompressed text-center">
                 TODO
               </span>

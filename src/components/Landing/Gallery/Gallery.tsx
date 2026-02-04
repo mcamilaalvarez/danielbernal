@@ -7,25 +7,29 @@ const visionImages = [
         id: 1,
         src: "/images/EducacionSuperior.png",
         alt: "Acceso a educación superior ",
-        title: "educación superior "
+        title: "educación superior ",
+        href: "/propuestas#educacion"
     },
     {
         id: 2,
         src: "/images/CampoProductivo.jpg",
         alt: "Un campo productivo y competitivo",
-        title: "Un campo productivo y competitivo"
+        title: "Un campo productivo y competitivo",
+        href: "/propuestas#campo"
     },
     {
         id: 3,
         src: "/images/MovilidadEficiente.jpg",
         alt: "Movilidad eficiente y sostenible",
-        title: "Movilidad eficiente "
+        title: "Movilidad eficiente ",
+        href: "/propuestas#movilidad"
     },
     {
         id: 4,
         src: "/images/DignidadParaTodos.png",
         alt: "Inclusión social con dignidad para todos",
-        title: "con dignidad para todos."
+        title: "con dignidad para todos.",
+        href: "/propuestas#salud"
     },
 ];
 
@@ -51,7 +55,7 @@ export default function Gallery() {
                     <div className="grid grid-cols-1 sm:grid-cols-5 gap-4 lg:col-span-3">
                         {/* Imagen 1 - Arriba izquierda (un poco más ancha) */}
                         <div 
-                            onClick={() => router.push('/propuestas')}
+                            onClick={() => router.push(visionImages[0].href)}
                             className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-[4/3] col-span-1 sm:col-span-2 cursor-pointer group"
                         >
                             <Image
@@ -68,7 +72,7 @@ export default function Gallery() {
                         </div>
 
                         <div 
-                            onClick={() => router.push('/propuestas')}
+                            onClick={() => router.push(visionImages[1].href)}
                             className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-auto col-span-1 sm:col-span-3 cursor-pointer group"
                         >
                             <Image
@@ -85,7 +89,7 @@ export default function Gallery() {
                         </div>
 
                         <div 
-                            onClick={() => router.push('/propuestas')}
+                            onClick={() => router.push(visionImages[2].href)}
                             className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-auto col-span-1 sm:col-span-3 cursor-pointer group"
                         >
                             <Image
@@ -103,7 +107,7 @@ export default function Gallery() {
 
                         {/* Imagen 4 - Abajo derecha (un poco más ancha) */}
                         <div 
-                            onClick={() => router.push('/propuestas')}
+                            onClick={() => router.push(visionImages[3].href)}
                             className="relative rounded-xl overflow-hidden aspect-[4/3] sm:aspect-square col-span-1 sm:col-span-2 cursor-pointer group"
                         >
                             <Image

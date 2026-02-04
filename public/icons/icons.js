@@ -1,5 +1,4 @@
-// Iconos utilizados en el proyecto Daniel Bernal
-// Este archivo contiene todos los SVG icons con sus paths y viewBox
+
 
 export const icons = {
     // Iconos de contacto
