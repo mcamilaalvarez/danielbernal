@@ -69,12 +69,16 @@ export default function News() {
                             {/* Overlay gradiente */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#027fc1] via-[#027fc1]/20 to-transparent"></div>
 
-                            {/* Contenido */}
-                            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center">
-                                <span className="inline-block bg-white text-[#0d5c85] text-sm font-bold font-helvetica px-4 py-1 mb-4">
+                            {/* Fecha arriba */}
+                            <div className="absolute top-4 left-0 right-0 text-center">
+                                <span className="inline-block bg-white text-[#0d5c85] text-sm font-bold font-helvetica px-4 py-1">
                                     {mainNews.fecha}
                                 </span>
-                                <h3 className="text-2xl md:text-[30px] font-bold mb-2">
+                            </div>
+
+                            {/* Contenido abajo */}
+                            <div className="absolute bottom-0 left-0 right-0 p-4 text-white text-center">
+                                <h3 className="text-2xl md:text-[34px] lg:text-[32px] font-bold mb-3 leading-tight">
                                     {mainNews.titulo}
                                 </h3>
                                 <p className="text-white/90 text-sm lg:text-[16px]">

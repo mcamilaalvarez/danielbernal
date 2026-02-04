@@ -9,7 +9,7 @@ export async function GET() {
     const propuestas = rows.map((row) => ({
       titulo: row[0],
       descripcion: row[1],
-      icono: row[2],
+      tema: row[2],
     }));
 
     return NextResponse.json(propuestas, { status: 200 });

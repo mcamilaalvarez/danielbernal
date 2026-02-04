@@ -1,93 +1,25 @@
-"use client";
-
 import Image from "next/image";
-import { useState, useEffect } from "react";
-// Iconos SVG personalizados
-const GraduationCapIcon = () => (
-  <svg viewBox="0 0 64 64" fill="currentColor" className="w-16 h-16 sm:w-20 sm:h-20">
-    <path d="M32 8L4 24l10 5.5v14L32 52l18-8.5v-14L54 27v15h4V24L32 8zm0 36l-14-7v-9.5l14 7 14-7V37l-14 7z" />
-    <rect x="52" y="42" width="4" height="8" rx="2" />
-  </svg>
-);
+import ProposalSection from "@/components/Common/ProposalSection/ProposalSection";
+import { GiWheat } from "react-icons/gi";
+import { FaHeartbeat, FaGraduationCap, FaCar, FaShieldAlt, FaGavel } from "react-icons/fa";
+import { ReactNode } from "react";
+import { propuestasPorTema } from "@/data/propuestas";
 
-const TractorIcon = () => (
-  <svg viewBox="0 0 64 64" fill="currentColor" className="w-16 h-16 sm:w-20 sm:h-20">
-    <circle cx="16" cy="48" r="10" fill="none" stroke="currentColor" strokeWidth="3" />
-    <circle cx="16" cy="48" r="4" />
-    <circle cx="48" cy="48" r="6" fill="none" stroke="currentColor" strokeWidth="3" />
-    <path d="M10 38h20v-8H18l-8 8z" />
-    <path d="M30 30h18v18h-6v-12H30z" />
-    <rect x="48" y="24" width="8" height="6" rx="1" />
-    <circle cx="56" cy="18" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
-    <path d="M56 14v-4M52 18h-4" strokeWidth="2" stroke="currentColor" />
-  </svg>
-);
-
-const TrainIcon = () => (
-  <svg viewBox="0 0 64 64" fill="currentColor" className="w-16 h-16 sm:w-20 sm:h-20">
-    <rect x="16" y="12" width="32" height="36" rx="4" />
-    <rect x="20" y="16" width="24" height="12" rx="2" fill="white" />
-    <circle cx="24" cy="40" r="3" fill="white" />
-    <circle cx="40" cy="40" r="3" fill="white" />
-    <rect x="12" y="48" width="40" height="4" />
-    <path d="M20 52l-4 8M44 52l4 8" strokeWidth="3" stroke="currentColor" />
-    <rect x="28" y="6" width="8" height="6" rx="1" />
-  </svg>
-);
-
-const HandshakeIcon = () => (
-  <svg viewBox="0 0 64 64" fill="currentColor" className="w-16 h-16 sm:w-20 sm:h-20">
-    <path d="M8 20h8l6 6 10-6h8v20l-8 8-10-4-10 4-4-4V20z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
-    <path d="M56 20h-8l-6 6-10-6h-8v20l8 8 10-4 10 4 4-4V20z" fill="none" stroke="currentColor" strokeWidth="3" strokeLinejoin="round" />
-    <path d="M24 32l8 8 8-8" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" />
-  </svg>
-);
-// Mapeo de iconos por nombre
-const iconMap: { [key: string]: React.FC } = {
-  educacion: GraduationCapIcon,
-  campo: TractorIcon,
-  movilidad: TrainIcon,
-  inclusion: HandshakeIcon,
-  // Fallback por defecto
-  default: GraduationCapIcon,
+// Iconos para cada tema
+const iconosPorTema: Record<string, ReactNode> = {
+  "POR EL CAMPO TODO": <GiWheat />,
+  "POR LA SALUD TODO": <FaHeartbeat />,
+  "EDUCACIÓN, DEPORTE Y CULTURA, TODO CON ENFOQUE TERRITORIAL": <FaGraduationCap />,
+  "POR LA SEGURIDAD TODO": <FaShieldAlt />,
+  "AUTONOMÍA Y BUEN GOBIERNO": <FaGavel />,
+  "POR UNA MOVILIDAD EFICIENTE TODO": <FaCar />,
 };
-
-// Función para obtener el icono correspondiente
-const getIconComponent = (iconName: string): React.FC => {
-  return iconMap[iconName?.toLowerCase()] || iconMap.default;
-};
-
-interface Propuesta {
-  titulo: string;
-  descripcion: string;
-  icono: string;
-}
 
 export default function ProposalsPage() {
-  const [proposals, setProposals] = useState<Propuesta[]>([]);
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const fetchProposals = async () => {
-      try {
-        const response = await fetch('/api/proposals');
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const data: Propuesta[] = await response.json();
-        setProposals(data);
-      } catch (error) {
-        console.error("Error fetching proposals:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-    fetchProposals();
-  }, []);
-
-  if (loading) {
-    return (
-      <div className="relative min-h-screen flex flex-col font-helvetica">
+  return (
+    <div className="min-h-screen flex flex-col font-helvetica">
+      <section className="relative w-full pt-52 lg:pt-56 pb-0">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/HeroBackground.png"
@@ -97,65 +29,55 @@ export default function ProposalsPage() {
             priority
           />
         </div>
-        <div className="relative z-10 flex-1 flex items-center justify-center">
-          <p className="text-white text-2xl">Cargando propuestas...</p>
-        </div>
-      </div>
-    );
-  }
 
-  return (
-    <div className="relative min-h-screen flex flex-col font-helvetica">
-       <div className="absolute inset-0 z-0">
-        <Image
-          src="/images/HeroBackground.png"
-          alt="Paisaje de Cundinamarca"
-          fill
-          className="object-cover object-top"
-          priority
-        />
-      </div>
-
-      {/* Sección principal */}
-      <section className="relative z-10 flex-1 pt-24 sm:pt-40 lg:pt-[200px] pb-16 px-4 sm:px-8">
-        {/* Título */}
-        <div className="text-center mb-12">
-          <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-4 drop-shadow-lg">
-            Propuestas para
-            <br />
-            transformar Cundinamarca
-          </h1>
-          <p className="text-white/90 text-lg sm:text-xl md:text-2xl font-light drop-shadow">
-            Un proyecto colectivo basado en hechos, no promesas.
-          </p>
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+        <h2 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] tracking-[-0.06em] leading-[0.9] font-helcompressed text-center mb-4">
+                POR CUNDINAMARCA
+              </h2>
+              <span className="text-[100px] sm:text-[130px] md:text-[150px] lg:text-[170px] text-[#f7ab13] tracking-[-0.06em] font-black leading-[0.9] font-helcompressed text-center">
+                TODO
+              </span>
         </div>
 
-        {/* Grid de propuestas */}
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6 lg:gap-8">
-          {proposals.map((proposal, index) => {
-            const IconComponent = getIconComponent(proposal.icono);
-            return (
-              <div
-                key={index}
-                className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 sm:p-10 flex flex-col items-center text-center shadow-sm hover:shadow-md transition-shadow duration-300"
-              >
-                {/* Icono */}
-                <div className="mb-6 text-[#0a4570]">
-                  <IconComponent />
-                </div>
+        {/* Tarjeta blanca al final de la sección hero */}
+        <div className="relative z-10 w-[95%] sm:w-[90%] md:w-[85%] lg:w-[70%] bg-white rounded-t-3xl mx-auto mt-[20px]">
+          <div className="px-6 sm:px-10 md:px-16 py-10 md:py-12 text-center">
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 lg:text-[20px]">
+              Cuando decimos «Por Cundinamarca Todo», no estamos escatimando: todo es{" "}
+              <strong>TODO</strong>. Al hablar de ello, nos referimos a abrazar la diversidad de nuestro
+              departamento: desde el campesino que cultiva la tierra con sus manos, hasta el
+              joven que sueña y construye futuro en su territorio.
+            </p>
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed mb-4 lg:text-[20px]">
+              Esto significa impulsar políticas que dignifiquen el trabajo rural, protejan el entorno
+              y generen oportunidades para quienes viven aquí. Pensamos en los retos que
+              enfrentan regiones agrícolas como Ubaté, Sumapaz o Almeidas; en la pujanza
+              panelera de Gualivá; en lo que merecen territorios estratégicos para el país como el
+              Guavio, Medina y el Oriente, y en los desafíos regionales de las Sabanas y Soacha.
+              Asimismo, integramos el potencial turístico y económico de los municipios ribereños
+              y del Tequendama, junto a la urgente necesidad de mejorar las vías que conectan
+              al Rionegro.
+            </p>
+            <p className="text-gray-700 text-base sm:text-lg leading-relaxed font-medium lg:text-[20px]">
+              Acá te presento mis propuestas como candidato a la Cámara de Representantes por
+              Cundinamarca.
+            </p>
+          </div>
+        </div>
+      </section>
 
-                {/* Título de la propuesta */}
-                <h3 className="text-[#0a4570] text-lg sm:text-xl font-bold tracking-wide mb-4">
-                  {proposal.titulo}
-                </h3>
-
-                {/* Descripción */}
-                <p className="text-[#4a6070] text-sm sm:text-base font-light leading-relaxed">
-                  {proposal.descripcion}
-                </p>
-              </div>
-            );
-          })}
+      {/* Sección de propuestas agrupadas por tema */}
+      <section className="bg-white py-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          {propuestasPorTema.map((section, index) => (
+            <ProposalSection
+              key={index}
+              id={section.id}
+              title={section.title}
+              icon={iconosPorTema[section.title]}
+              proposals={section.proposals}
+            />
+          ))}
         </div>
       </section>
     </div>

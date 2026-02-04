@@ -74,9 +74,7 @@ export default function PresentationPage() {
 
           {/* Título principal */}
           <h1 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">
-            Abogado, Magíster y
-            <br />
-            Servidor por Vocación
+            Abogado y Magíster en Planeación Urbana y Regional
           </h1>
 
           {/* Cita bíblica */}
