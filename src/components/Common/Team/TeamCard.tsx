@@ -11,9 +11,9 @@ interface TeamCardProps {
 
 export function TeamCard({ name, role, description, image, linkedin }: TeamCardProps) {
   return (
-    <div className="group relative">
+    <div className="group relative ">
       {/* Card */}
-      <div className="bg-white/5 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 pt-16 text-center hover:bg-white/10 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+      <div className="bg-white border border-gray-200 rounded-2xl p-6 pt-16 text-center hover:shadow-lg hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
         {/* Avatar */}
         <div className="absolute -top-10 left-1/2 -translate-x-1/2">
           <div className="relative">
@@ -33,12 +33,12 @@ export function TeamCard({ name, role, description, image, linkedin }: TeamCardP
 
         {/* Content */}
         <div className="mt-4">
-          <h3 className="text-xl font-bold text-white mb-1">{name}</h3>
+          <h3 className="text-xl font-bold text-[#114380] mb-1">{name}</h3>
           <p className="text-amber-500 font-medium text-sm mb-4">{role}</p>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">{description}</p>
+          <p className="text-gray-600 text-sm leading-relaxed mb-6">{description}</p>
 
           {/* Actions */}
-          <div className="flex items-center justify-between pt-4 border-t border-slate-700">
+          <div className="flex items-center justify-between pt-4 border-t border-gray-200">
             <a
               href="#"
               className="text-amber-500 text-sm font-medium hover:text-amber-400 transition-colors flex items-center gap-1"
