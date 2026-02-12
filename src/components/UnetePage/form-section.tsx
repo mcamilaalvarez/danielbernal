@@ -99,17 +99,6 @@ export function FormSection() {
               </div>
               <div className="flex gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E8A317]/15 text-sm font-bold text-[#E8A317]">
-                  2
-                </div>
-                <div>
-                  <p className="font-bold text-[#1B3A5C]">Elige tu area</p>
-                  <p className="text-sm text-[#1B3A5C]/50">
-                    Selecciona donde quieres aportar
-                  </p>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E8A317]/15 text-sm font-bold text-[#E8A317]">
                   3
                 </div>
                 <div>
