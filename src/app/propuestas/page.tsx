@@ -1,9 +1,22 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import ProposalSection from "@/components/Common/ProposalSection/ProposalSection";
 import { GiWheat } from "react-icons/gi";
 import { FaHeartbeat, FaGraduationCap, FaCar, FaShieldAlt, FaGavel } from "react-icons/fa";
 import { ReactNode } from "react";
 import { propuestasPorTema } from "@/data/propuestas";
+
+export const metadata: Metadata = {
+  title: "Mis propuestas | Daniel Bernal - Por Cundinamarca",
+  description:
+    "Por Cundinamarca Todo. Conoce mis propuestas: campo, salud, educación y cultura, seguridad, autonomía y buen gobierno, movilidad eficiente.",
+  icons: { icon: "/icon" },
+  openGraph: {
+    title: "Mis propuestas | Daniel Bernal - Por Cundinamarca",
+    description:
+      "Por Cundinamarca Todo. Conoce mis propuestas como candidato a la Cámara por Cundinamarca.",
+  },
+};
 
 // Iconos para cada tema
 const iconosPorTema: Record<string, ReactNode> = {

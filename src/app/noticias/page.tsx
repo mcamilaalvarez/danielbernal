@@ -60,7 +60,7 @@ export default function NewsPage() {
   const otrasNoticias = noticias.slice(1);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#021446] via-[#114380] to-[#04348c] pt-40 pb-16 px-4 sm:px-8 font-helvetica">
+    <section className="min-h-screen bg-gradient-to-br from-[#021446] via-[#114380] to-[#114380] pt-40 pb-16 px-4 sm:px-8 font-helvetica">
       <div className="max-w-6xl mx-auto">
         {/* Título de la sección */}
         <div className="border-l-4 border-[#f7ab13] pl-4 mb-10">
@@ -100,37 +100,75 @@ export default function NewsPage() {
           </div>
         </article>
 
-        {/* Grid de otras noticias */}
+        {/* Segunda noticia con layout de texto envolvente */}
         {otrasNoticias.length > 0 && (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-            {otrasNoticias.map((noticia, index) => (
+          <article className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300 p-6 lg:p-0 mb-10">
+            {/* Imagen flotante a la derecha */}
+            <div className="float-right ml-6 mb-4 w-full sm:w-[45%] lg:w-[50%]">
+              <div className="relative aspect-square rounded-bl-2xl overflow-hidden">
+                <Image
+                  src={otrasNoticias[0].urlImagen || "/images/proyect.jpg"}
+                  alt={otrasNoticias[0].altImagen || otrasNoticias[0].titulo}
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            
+            {/* Contenido que fluye alrededor */}
+            <div className="p-6 lg:p-8">
+              <span className="bg-[#f7ab13] text-[#114380] px-4 py-1 text-sm font-bold rounded-full inline-block w-fit mb-4">
+                {otrasNoticias[0].fecha}
+              </span>
+              <h3 className="text-[#114380] text-xl lg:text-2xl font-bold mb-4">
+                {otrasNoticias[0].titulo}
+              </h3>
+              <p className="text-gray-600 text-base  leading-relaxed mb-4 text-justify">
+                {otrasNoticias[0].descripcion}
+              </p>
+              <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line text-justify">
+                {otrasNoticias[0].texto}
+              </p>
+            </div>
+            
+            {/* Clear float */}
+            <div className="clear-both"></div>
+          </article>
+        )}
+
+        {/* Resto de noticias con layout lado a lado */}
+        {otrasNoticias.length > 1 && (
+          <div className="space-y-10">
+            {otrasNoticias.slice(1).map((noticia, index) => (
               <article
                 key={index}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
-                {/* Imagen */}
-                <div className="relative h-150">
-                  <Image
-                    src={noticia.urlImagen || "/images/proyect.jpg"}
-                    alt={noticia.altImagen || noticia.titulo}
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                {/* Contenido */}
-                <div className="p-5">
-                  <span className="text-[#f7ab13] text-sm font-semibold">
-                    {noticia.fecha}
-                  </span>
-                  <h3 className="text-[#114380] text-lg font-bold mt-2 mb-2">
-                    {noticia.titulo}
-                  </h3>
-                  <p className="text-gray-600 text-base lg:text-lg leading-relaxed mb-4">
-                    {noticia.descripcion}
-                  </p>
-                  <p className="text-gray-600 text-base leading-snug whitespace-pre-line ">
-                    {noticia.texto}
-                  </p>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                  {/* Contenido - alterna posición según índice */}
+                  <div className={`p-6 lg:p-8 flex flex-col justify-center ${index % 2 === 1 ? 'lg:order-2' : ''}`}>
+                    <span className="bg-[#f7ab13] text-[#114380] px-4 py-1 text-sm font-bold rounded-full inline-block w-fit mb-4">
+                      {noticia.fecha}
+                    </span>
+                    <h3 className="text-[#114380] text-xl lg:text-2xl font-bold mb-4">
+                      {noticia.titulo}
+                    </h3>
+                    <p className="text-gray-700 text-base lg:text-lg leading-relaxed mb-4">
+                      {noticia.descripcion}
+                    </p>
+                    <p className="text-gray-600 text-base leading-relaxed whitespace-pre-line">
+                      {noticia.texto}
+                    </p>
+                  </div>
+                  {/* Imagen */}
+                  <div className={`relative min-h-[300px] lg:min-h-[400px] ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+                    <Image
+                      src={noticia.urlImagen || "/images/proyect.jpg"}
+                      alt={noticia.altImagen || noticia.titulo}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
                 </div>
               </article>
             ))}
