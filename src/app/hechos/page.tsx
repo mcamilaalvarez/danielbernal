@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Hechos | Daniel Bernal - Por Cundinamarca",
   description:
     "Nuestro recorrido: una gestión con impacto. Conoce los logros y avances en educación, movilidad, inclusión y más en Cundinamarca.",
-  icons: { icon: "/icon" },
+  icons: { icon: "/icon.svg" },
   openGraph: {
     title: "Hechos | Daniel Bernal - Por Cundinamarca",
     description:

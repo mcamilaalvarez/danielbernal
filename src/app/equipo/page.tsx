@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Únete al equipo | Daniel Bernal - Por Cundinamarca",
   description:
     "Se parte del equipo que está transformando Cundinamarca. Únete como voluntario, líder comunitario o colaborador.",
-  icons: { icon: "/icon" },
+  icons: { icon: "/icon.svg" },
   openGraph: {
     title: "Únete al equipo | Daniel Bernal - Por Cundinamarca",
     description:

@@ -41,7 +41,7 @@ export const metadata: Metadata = {
   description:
     "Daniel Bernal, candidato a la Cámara por Cundinamarca. Abogado de la Universidad Nacional, magister en Planeación Urbana y Regional, especialista en Gobierno, Gestión Pública y Opinión Política de la Pontificia Universidad Javeriana.",
   icons: {
-    icon: "/icon?v=2", // Next.js sirve src/app/icon.svg en /icon
+    icon: "/icon.svg",
   },
   openGraph: {
     title: "Daniel Bernal - Candidato a la Cámara",

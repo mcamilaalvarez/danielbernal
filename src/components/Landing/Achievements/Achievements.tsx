@@ -42,7 +42,7 @@ export default function Achievements() {
 
             <div className="mt-4 flex justify-center lg:justify-start">
               <button
-                onClick={() => router.push("/achievements")}
+                onClick={() => router.push("/hechos")}
                 className="inline-flex items-center gap-1 bg-[#0d5c85] 
                 hover:bg-[#0b4f72] text-white px-6 md:px-7 lg:px-8 py-3 rounded-full
                  text-[20px] sm:text-[20px] md:text-lg font-normal transition-all duration-200 active:scale-95 active:bg-[#0a4d6d] transform cursor-pointer"

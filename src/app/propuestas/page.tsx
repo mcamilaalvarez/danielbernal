@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   title: "Mis propuestas | Daniel Bernal - Por Cundinamarca",
   description:
     "Por Cundinamarca Todo. Conoce mis propuestas: campo, salud, educación y cultura, seguridad, autonomía y buen gobierno, movilidad eficiente.",
-  icons: { icon: "/icon" },
+  icons: { icon: "/icon.svg" },
   openGraph: {
     title: "Mis propuestas | Daniel Bernal - Por Cundinamarca",
     description:

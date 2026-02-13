@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Quién soy | Daniel Bernal - Por Cundinamarca",
   description:
     "Daniel Bernal: abogado de la Universidad Nacional, magister en Planeación Urbana y Regional, especialista en Gobierno y Gestión Pública. Más de 8 años en servicio público.",
-  icons: { icon: "/icon" },
+  icons: { icon: "/icon.svg" },
   openGraph: {
     title: "Quién soy | Daniel Bernal - Por Cundinamarca",
     description:
