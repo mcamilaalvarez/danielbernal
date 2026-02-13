@@ -99,7 +99,7 @@ export function FormSection() {
               </div>
               <div className="flex gap-4">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#E8A317]/15 text-sm font-bold text-[#E8A317]">
-                  3
+                  2
                 </div>
                 <div>
                   <p className="font-bold text-[#1B3A5C]">Te contactamos</p>
@@ -198,10 +198,7 @@ export function FormSection() {
                 {loading ? "Enviando..." : "Unirme al equipo"}
                 <FaPaperPlane className="h-5 w-5" />
               </button>
-              <p className="mt-4 text-center text-xs text-[#1B3A5C]/30">
-                Tu informacion esta segura y solo sera usada para contactarte
-                sobre actividades del equipo.
-              </p>
+            
             </form>
           </div>
         </div>
