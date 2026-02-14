@@ -53,7 +53,7 @@ export function FormSection() {
             <div className="flex h-20 w-20 items-center justify-center rounded-full bg-[#E8A317]/20">
               <FaCheckCircle className="h-10 w-10 text-[#E8A317]" />
             </div>
-            <h2 className="font-serif text-4xl text-[#1B3A5C] md:text-5xl">
+            <h2 className="font-helvetica text-4xl text-[#1B3A5C] md:text-5xl">
               {"Bienvenido al equipo"}
             </h2>
             <p className="text-lg leading-relaxed text-[#1B3A5C]/70">
@@ -75,7 +75,7 @@ export function FormSection() {
             <p className="mb-2 text-sm font-bold uppercase tracking-widest text-[#E8A317]">
               Inscribete
             </p>
-            <h2 className="font-serif text-4xl text-[#1B3A5C] md:text-5xl">
+            <h2 className="font-helvetica text-4xl text-[#1B3A5C] md:text-5xl">
               <span className="text-balance">
                 Da el primer{" "}
                 <span className="text-[#E8A317]">paso</span>

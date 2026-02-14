@@ -6,22 +6,22 @@ const razones = [
     icon: FaUsers,
     titulo: "Comunidad",
     descripcion:
-    "Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos integer pulvinar sed magnis luctus montes",  },
+    " Construimos relaciones genuinas en cada municipio, vereda y provincia. Escuchamos, conversamos y trabajamos hombro a hombro con la gente, porque el cambio verdadero nace del territorio.",  },
   {
         icon: FaLightbulb,
     titulo: "Ideas que transforman",
     descripcion:
-    "Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos integer pulvinar sed magnis luctus montes",  },
+    "No nos quedamos en discursos. Impulsamos propuestas claras, viables y con impacto en la vida de las personas: el campo, la salud, la educación, la movilidad y la seguridad son compromisos reales, no promesas.",  },
   {
     icon: FaMapPin,
     titulo: "Presencia en todo el territorio",
     descripcion:
-    "Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos integer pulvinar sed magnis luctus montes",  },
+    "Estamos donde están los ciudadanos. Recorremos Cundinamarca completa, entendiendo sus diferencias, sus necesidades y su potencial. Cada provincia cuenta, cada voz importa.",  },
   {
     icon: FaHandshake,
     titulo: "Compromiso social",
     descripcion:
-      "Lorem ipsum dolor sit amet consectetur adipiscing elit inceptos integer pulvinar sed magnis luctus montes",
+      "Defendemos la dignidad de los campesinos, los jóvenes, los adultos mayores, las personas con discapacidad y sus cuidadores. Creemos en una política que sirva, que acompañe y que resuelva.",
   },
 ]
 
@@ -45,15 +45,15 @@ export function PorQueSection() {
             <p className="mb-2 text-sm font-bold uppercase tracking-widest text-[#E8A317]">
               Por que unirte
             </p>
-            <h2 className="font-serif text-4xl text-[#1B3A5C] md:text-5xl">
+            <h2 className="font-helvetica text-4xl text-[#1B3A5C] md:text-5xl">
               <span className="text-balance">
                 Mas que un equipo, una{" "}
                 <span className="text-[#E8A317]">familia</span>
               </span>
             </h2>
             <p className="mt-4 text-lg leading-relaxed text-[#1B3A5C]/90">
-              Creemos en la politica como herramienta de transformacion social.
-              Aqui encontraras un espacio para crecer, proponer y actuar.
+              Aquí no sumamos nombres, sumamos voluntades. Creemos en la política como una herramienta real de transformación social, hecha con carácter, con hechos y con Dios por delante. Este es un espacio para crecer, proponer y actuar con propósito.
+
             </p>
             <div className="mt-10 grid gap-6 sm:grid-cols-2">
               {razones.map((razon) => (
