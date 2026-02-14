@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 
 export default function UnetePage() {
   return (
-    <div className="font-helvetica">
+    <div className="font-helvetica ">
       <HeroUnete />
       <div className="bg-gradient-to-br from-[#021446] via-[#114380] to-[#114380] ">
         <PorQueSection />
