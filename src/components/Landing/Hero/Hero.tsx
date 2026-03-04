@@ -102,11 +102,12 @@ export default function Hero() {
                   xmlns="http://www.w3.org/2000/svg" 
                   className="w-6 h-10 sm:w-8 sm:h-12 md:w-16 md:h-20 lg:w-20 lg:h-24 flex-shrink-0"
                   preserveAspectRatio="xMidYMid meet"
+                  aria-hidden="true"
                 >
                   <path fill="#f7ab14" d="M38.54,71.78l4.83-39.13h20.42s20.48,1.17,18.48,25.95c-2.94,26.07-22.83,26.54-31.01,26.78l1.18-11.89s14.48,2.06,15.89-15.48c1.41-16.24-13.18-13.12-13.18-13.12l-3.35,26.83-13.24.06Z"/>
                   <path fill="#e53439" d="M51.19,73.01l-1.59,12.36h-6.64c-3.11,0-5.52-2.71-5.17-5.79l.75-6.56h12.65Z"/>
                 </svg>
-                <span className="text-[#114380] text-[40px] sm:text-[60px] md:text-[90px] lg:text-[115px] font-helcompressed tracking-[-0.06em] leading-[0.9] ml-[-2px] md:ml-[-4px] mt-[8px] md:mt-[20px]">ANIEL</span>
+                <span className="text-[#114380] text-[40px] sm:text-[60px] md:text-[90px] lg:text-[115px] font-helcompressed tracking-[-0.06em] leading-[0.9] ml-[-2px] md:ml-[-4px] mt-[8px] md:mt-[20px]"><span className="sr-only">D</span>ANIEL</span>
               </span>
               <span className="text-[#114380] text-[40px] sm:text-[60px] md:text-[90px] lg:text-[115px] font-helcompressed tracking-[-0.06em] leading-[0.9] ml-[8px] md:ml-[20px] mt-[8px] md:mt-[20px]">BERNAL</span>
             </h2>
