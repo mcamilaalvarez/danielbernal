@@ -80,11 +80,14 @@ export default function Contact() {
                                 xmlns="http://www.w3.org/2000/svg" 
                                 className="w-6 h-8"
                                 preserveAspectRatio="xMidYMid meet"
+                                aria-hidden="true"
                             >
                                 <path fill="#f7ab14" d="M38.54,71.78l4.83-39.13h20.42s20.48,1.17,18.48,25.95c-2.94,26.07-22.83,26.54-31.01,26.78l1.18-11.89s14.48,2.06,15.89-15.48c1.41-16.24-13.18-13.12-13.18-13.12l-3.35,26.83-13.24.06Z"/>
                                 <path fill="#e53439" d="M51.19,73.01l-1.59,12.36h-6.64c-3.11,0-5.52-2.71-5.17-5.79l.75-6.56h12.65Z"/>
                             </svg>
-                            <span className="text-white text-lg md:text-[25px] font-bold tracking-wide font-helcompressed">ANIEL BERNAL</span>
+                            <span className="text-white text-lg md:text-[25px] font-bold tracking-wide font-helcompressed">
+                                <span className="sr-only">D</span>ANIEL BERNAL
+                            </span>
                         </div>
                     </div>
 

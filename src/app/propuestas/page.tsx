@@ -44,7 +44,7 @@ export default function ProposalsPage() {
         </div>
 
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] tracking-[-0.06em] leading-[0.9] font-helcompressed text-center mb-4">
+        <h2 className="text-[40px] sm:text-[50px] md:text-[60px] lg:text-[70px] tracking-[-0.06em] leading-[0.9] font-helcompressed text-center mb-4 text-white">
                 POR CUNDINAMARCA
               </h2>
               <span className="text-[100px] sm:text-[130px] md:text-[150px] lg:text-[170px] text-[#f7ab13] tracking-[-0.06em] font-black leading-[0.9] font-helcompressed text-center">
