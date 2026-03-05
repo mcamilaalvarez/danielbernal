@@ -95,8 +95,8 @@ export default function Hero() {
         <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-6 md:py-12 lg:pb-2 mx-auto text-center">
           {/* Name */}
           <div className="mb-4 md:mb-8 mx-auto">
-            <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold flex items-center justify-center gap-1 md:gap-4">
-              <span className="flex items-center">
+            <h2 aria-label="Daniel Bernal" className="text-4xl md:text-6xl lg:text-7xl font-bold flex items-center justify-center gap-1 md:gap-4">
+              <span aria-hidden="true" className="flex items-center">
                 <svg 
                   viewBox="40 32 42 53" 
                   xmlns="http://www.w3.org/2000/svg" 
@@ -107,9 +107,9 @@ export default function Hero() {
                   <path fill="#f7ab14" d="M38.54,71.78l4.83-39.13h20.42s20.48,1.17,18.48,25.95c-2.94,26.07-22.83,26.54-31.01,26.78l1.18-11.89s14.48,2.06,15.89-15.48c1.41-16.24-13.18-13.12-13.18-13.12l-3.35,26.83-13.24.06Z"/>
                   <path fill="#e53439" d="M51.19,73.01l-1.59,12.36h-6.64c-3.11,0-5.52-2.71-5.17-5.79l.75-6.56h12.65Z"/>
                 </svg>
-                <span className="text-[#114380] text-[40px] sm:text-[60px] md:text-[90px] lg:text-[115px] font-helcompressed tracking-[-0.06em] leading-[0.9] ml-[-2px] md:ml-[-4px] mt-[8px] md:mt-[20px]"><span className="sr-only">D</span>ANIEL</span>
+                <span className="text-[#114380] text-[40px] sm:text-[60px] md:text-[90px] lg:text-[115px] font-helcompressed tracking-[-0.06em] leading-[0.9] ml-[-2px] md:ml-[-4px] mt-[8px] md:mt-[20px]">ANIEL</span>
               </span>
-              <span className="text-[#114380] text-[40px] sm:text-[60px] md:text-[90px] lg:text-[115px] font-helcompressed tracking-[-0.06em] leading-[0.9] ml-[8px] md:ml-[20px] mt-[8px] md:mt-[20px]">BERNAL</span>
+              <span aria-hidden="true" className="text-[#114380] text-[40px] sm:text-[60px] md:text-[90px] lg:text-[115px] font-helcompressed tracking-[-0.06em] leading-[0.9] ml-[8px] md:ml-[20px] mt-[8px] md:mt-[20px]">BERNAL</span>
             </h2>
           </div>
 

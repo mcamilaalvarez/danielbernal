@@ -43,6 +43,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/icon.svg",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
   openGraph: {
     title: "Daniel Bernal - Candidato a la Cámara",
     description:
