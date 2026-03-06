@@ -37,6 +37,7 @@ const helcompressed= localFont({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.danielbernal.com.co"),
   title: "Daniel Bernal",
   description:
     "Daniel Bernal, candidato a la Cámara por Cundinamarca. Abogado de la Universidad Nacional, magister en Planeación Urbana y Regional, especialista en Gobierno, Gestión Pública y Opinión Política de la Pontificia Universidad Javeriana.",
@@ -51,6 +52,10 @@ export const metadata: Metadata = {
     title: "Daniel Bernal - Candidato a la Cámara",
     description:
       "Daniel Bernal, candidato a la Cámara por Cundinamarca. Abogado de la Universidad Nacional, magister en Planeación Urbana y Regional, especialista en Gobierno, Gestión Pública y Opinión Política de la Pontificia Universidad Javeriana.",
+    url: "https://www.danielbernal.com.co",
+    siteName: "Daniel Bernal",
+    locale: "es_CO",
+    type: "website",
   },
 };
 
